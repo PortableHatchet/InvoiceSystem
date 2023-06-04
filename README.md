@@ -10,7 +10,7 @@ The prgram allows you to
 
 My purpose for creating this program was/is to better understand SQL databases and how to query them through other programs outside of MySQL.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/V1udn_ZjmSE)
 
 # Relational Database
 
