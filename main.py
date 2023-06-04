@@ -162,10 +162,17 @@ def update_invoice():
     conn.commit()
     conn.close()
 
+def delete_invoice():
+    conn = sqlite3.connect('invoice.db')
+    c = conn.cursor()
+    print('What invoice would you like to delete?(Use invoice ID)')
+    inv_delete = input()
+    c.execute("DELETE FROM invoices WHERE invoice_id = ?", (inv_delete,))
+    conn.commit()
+    conn.close()
 
 def main():
     
-
     user_input = ''
     while user_input != '5':
         print('==============================')
@@ -173,7 +180,7 @@ def main():
         print('1. View Current Invoices')
         print('2. Create New Invoice')
         print('3. Update an Invoice')
-        print('4. Invoice History')
+        print('4. Delete an invoice')
         print('5. Exit')
         print('==============================')
         user_input = input()
@@ -184,6 +191,8 @@ def main():
             create_invoice()
         elif user_input == '3':
             update_invoice()
+        elif user_input == '4':
+            delete_invoice()
         
 
 if __name__ == '__main__':
